@@ -24,6 +24,9 @@ class PackageJsonResolver implements Resolver {
             if (typeof path === 'string') {
                 return absolute(this.fileName, path);
             }
+            else if (typeof path === 'undefined') {
+                return void 0;
+            }
             else {
                 throw new Error(`path=${path}`);
             }
