@@ -1,0 +1,258 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>package-exports-resolver-kernel</title><meta name="description" content="Documentation for package-exports-resolver-kernel"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">package-exports-resolver-kernel</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<h2>package-exports-resolver-kernel</h2></div>
+<div class="tsd-panel tsd-typography">
+<a href="#package-exports-resolver-kernel" id="package-exports-resolver-kernel" style="color: inherit; text-decoration: none;">
+  <h1>package-exports-resolver-kernel</h1>
+</a>
+<p><a href="https://www.npmjs.com/package/@geometryzen/package-exports-resolver-kernel"><img src="https://img.shields.io/npm/v/@geometryzen/package-exports-resolver-kernel.svg" alt="version"></a> </p>
+<p><a href="https://npm-stat.com/charts.html?package=@geometryzen/package-exports-resolver-kernel&from=2022-12-01"><img src="https://img.shields.io/npm/dm/@geometryzen/package-exports-resolver-kernel.svg" alt="npm downloads"></a></p>
+<p><a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+<p><a href="./CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a></p>
+
+<a href="#resolveexports--" id="resolveexports--" style="color: inherit; text-decoration: none;">
+  <h1>resolve.exports <a href="https://github.com/lukeed/resolve.exports/actions"><img src="https://github.com/lukeed/resolve.exports/workflows/CI/badge.svg" alt="CI"></a> <a href="https://codecov.io/gh/lukeed/resolve.exports"><img src="https://badgen.net/codecov/c/github/lukeed/resolve.exports" alt="codecov"></a></h1>
+</a>
+<blockquote>
+<p>A tiny (737b), correct, general-purpose, and configurable <code>&quot;exports&quot;</code> resolver without file-system reliance</p>
+</blockquote>
+<p><em><strong>Why?</strong></em></p>
+<p>Hopefully, this module may serve as a reference point (and/or be used directly) so that the varying tools and bundlers within the ecosystem can share a common approach with one another <strong>as well as</strong> with the native Node.js implementation.</p>
+<p>With the push for ESM, we must be <em>very</em> careful and avoid fragmentation. If we, as a community, begin propagating different <em>dialects</em> of <code>&quot;exports&quot;</code> resolution, then we&#39;re headed for deep trouble. It will make supporting (and using) <code>&quot;exports&quot;</code> nearly impossible, which may force its abandonment and along with it, its benefits.</p>
+<p>Let&#39;s have nice things.</p>
+<p><em><strong>TODO</strong></em></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> exports string</li>
+<li><input checked="" disabled="" type="checkbox"> exports object (single entry)</li>
+<li><input checked="" disabled="" type="checkbox"> exports object (multi entry)</li>
+<li><input checked="" disabled="" type="checkbox"> nested / recursive conditions</li>
+<li><input checked="" disabled="" type="checkbox"> exports arrayable</li>
+<li><input checked="" disabled="" type="checkbox"> directory mapping (<code>./foobar/</code> =&gt; <code>/foobar/</code>)</li>
+<li><input checked="" disabled="" type="checkbox"> directory mapping (<code>./foobar/*</code> =&gt; <code>./other/*.js</code>)</li>
+<li><input checked="" disabled="" type="checkbox"> directory mapping w/ conditions</li>
+<li><input checked="" disabled="" type="checkbox"> directory mapping w/ nested conditions</li>
+<li><input checked="" disabled="" type="checkbox"> legacy fields (<code>main</code> vs <code>module</code> vs ...)</li>
+<li><input checked="" disabled="" type="checkbox"> legacy &quot;browser&quot; files object</li>
+</ul>
+
+<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+  <h2>Install</h2>
+</a>
+<pre><code class="language-sh"><span class="hl-0">$ npm install package-exports-resolver-kernel</span>
+</code></pre>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<blockquote>
+<p>Please see <a href="/test"><code>/test/</code></a> for examples.</p>
+</blockquote>
+<pre><code class="language-js"><span class="hl-1">import</span><span class="hl-0"> { </span><span class="hl-2">resolve</span><span class="hl-0">, </span><span class="hl-2">legacy</span><span class="hl-0"> } </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-3">&#39;resolve.exports&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">contents</span><span class="hl-0"> = {</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;name&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;foobar&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;module&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;dist/module.mjs&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;main&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;dist/require.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;exports&quot;</span><span class="hl-2">:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">&quot;.&quot;</span><span class="hl-2">:</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-3">&quot;import&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./dist/module.mjs&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">      </span><span class="hl-3">&quot;require&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./dist/require.js&quot;</span><br/><span class="hl-0">    },</span><br/><span class="hl-0">    </span><span class="hl-3">&quot;./lite&quot;</span><span class="hl-2">:</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-3">&quot;worker&quot;</span><span class="hl-2">:</span><span class="hl-0"> {</span><br/><span class="hl-0">        </span><span class="hl-3">&quot;browser&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./lite/worker.brower.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">        </span><span class="hl-3">&quot;node&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./lite/worker.node.js&quot;</span><br/><span class="hl-0">      },</span><br/><span class="hl-0">      </span><span class="hl-3">&quot;import&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./lite/module.mjs&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">      </span><span class="hl-3">&quot;require&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./lite/require.js&quot;</span><br/><span class="hl-0">    }</span><br/><span class="hl-0">  }</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-6">// Assumes `.` as default entry</span><br/><span class="hl-6">// Assumes `import` as default condition</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">); </span><span class="hl-6">//=&gt; &quot;./dist/module.mjs&quot;</span><br/><br/><span class="hl-6">// entry: nullish === &quot;foobar&quot; === &quot;.&quot;</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;foobar&#39;</span><span class="hl-0">); </span><span class="hl-6">//=&gt; &quot;./dist/module.mjs&quot;</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;.&#39;</span><span class="hl-0">); </span><span class="hl-6">//=&gt; &quot;./dist/module.mjs&quot;</span><br/><br/><span class="hl-6">// entry: &quot;foobar/lite&quot; === &quot;./lite&quot;</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;foobar/lite&#39;</span><span class="hl-0">); </span><span class="hl-6">//=&gt; &quot;./lite/module.mjs&quot;</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;./lite&#39;</span><span class="hl-0">); </span><span class="hl-6">//=&gt; &quot;./lite/module.mjs&quot;</span><br/><br/><span class="hl-6">// Assume `require` usage</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;foobar&#39;</span><span class="hl-0">, { </span><span class="hl-2">require:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0"> }); </span><span class="hl-6">//=&gt; &quot;./dist/require.js&quot;</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;./lite&#39;</span><span class="hl-0">, { </span><span class="hl-2">require:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0"> }); </span><span class="hl-6">//=&gt; &quot;./lite/require.js&quot;</span><br/><br/><span class="hl-6">// Throws &quot;Missing &lt;entry&gt; export in &lt;name&gt; package&quot; Error</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;foobar/hello&#39;</span><span class="hl-0">);</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;./hello/world&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-6">// Add custom condition(s)</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;foobar/lite&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&#39;worker&#39;</span><span class="hl-0">]</span><br/><span class="hl-0">}); </span><span class="hl-6">// =&gt; &quot;./lite/worker.node.js&quot;</span><br/><br/><span class="hl-6">// Toggle &quot;browser&quot; condition</span><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;foobar/lite&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&#39;worker&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">  </span><span class="hl-2">browser:</span><span class="hl-0"> </span><span class="hl-4">true</span><br/><span class="hl-0">}); </span><span class="hl-6">// =&gt; &quot;./lite/worker.browser.js&quot;</span><br/><br/><span class="hl-6">// ---</span><br/><span class="hl-6">// Legacy</span><br/><span class="hl-6">// ---</span><br/><br/><span class="hl-6">// prefer &quot;module&quot; &gt; &quot;main&quot; (default)</span><br/><span class="hl-7">legacy</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">); </span><span class="hl-6">//=&gt; &quot;dist/module.mjs&quot;</span><br/><br/><span class="hl-6">// customize fields order</span><br/><span class="hl-7">legacy</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">fields:</span><span class="hl-0"> [</span><span class="hl-3">&#39;main&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;module&#39;</span><span class="hl-0">]</span><br/><span class="hl-0">}); </span><span class="hl-6">//=&gt; &quot;dist/require.js&quot;</span>
+</code></pre>
+
+<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+  <h2>API</h2>
+</a>
+
+<a href="#resolvepkg-entry-options" id="resolvepkg-entry-options" style="color: inherit; text-decoration: none;">
+  <h3>resolve(pkg, entry?, options?)</h3>
+</a>
+<p>Returns: <code>string</code> or <code>undefined</code></p>
+<p>Traverse the <code>&quot;exports&quot;</code> within the contents of a <code>package.json</code> file. <br>
+If the contents <em>does not</em> contain an <code>&quot;exports&quot;</code> map, then <code>undefined</code> will be returned.</p>
+<p>Successful resolutions will always result in a string value. This will be the value of the resolved mapping itself – which means that the output is a relative file path.</p>
+<p>This function may throw an Error if:</p>
+<ul>
+<li>the requested <code>entry</code> cannot be resolved (aka, not defined in the <code>&quot;exports&quot;</code> map)</li>
+<li>an <code>entry</code> <em>was</em> resolved but no known conditions were found (see <a href="#optionsconditions"><code>options.conditions</code></a>)</li>
+</ul>
+
+<a href="#pkg" id="pkg" style="color: inherit; text-decoration: none;">
+  <h4>pkg</h4>
+</a>
+<p>Type: <code>object</code> <br>
+Required: <code>true</code></p>
+<p>The <code>package.json</code> contents.</p>
+
+<a href="#entry" id="entry" style="color: inherit; text-decoration: none;">
+  <h4>entry</h4>
+</a>
+<p>Type: <code>string</code> <br>
+Required: <code>false</code> <br>
+Default: <code>.</code> (aka, root)</p>
+<p>The desired target entry, or the original <code>import</code> path.</p>
+<p>When <code>entry</code> <em>is not</em> a relative path (aka, does not start with <code>&#39;.&#39;</code>), then <code>entry</code> is given the <code>&#39;./&#39;</code> prefix.</p>
+<p>When <code>entry</code> begins with the package name (determined via the <code>pkg.name</code> value), then <code>entry</code> is truncated and made relative.</p>
+<p>When <code>entry</code> is already relative, it is accepted as is.</p>
+<p><em><strong>Examples</strong></em></p>
+<p>Assume we have a module named &quot;foobar&quot; and whose <code>pkg</code> contains <code>&quot;name&quot;: &quot;foobar&quot;</code>.</p>
+<table>
+<thead>
+<tr>
+<th><code>entry</code> value</th>
+<th>treated as</th>
+<th>reason</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>null</code> / <code>undefined</code></td>
+<td><code>&#39;.&#39;</code></td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>&#39;.&#39;</code></td>
+<td><code>&#39;.&#39;</code></td>
+<td>value was relative</td>
+</tr>
+<tr>
+<td><code>&#39;foobar&#39;</code></td>
+<td><code>&#39;.&#39;</code></td>
+<td>value was <code>pkg.name</code></td>
+</tr>
+<tr>
+<td><code>&#39;foobar/lite&#39;</code></td>
+<td><code>&#39;./lite&#39;</code></td>
+<td>value had <code>pkg.name</code> prefix</td>
+</tr>
+<tr>
+<td><code>&#39;./lite&#39;</code></td>
+<td><code>&#39;./lite&#39;</code></td>
+<td>value was relative</td>
+</tr>
+<tr>
+<td><code>&#39;lite&#39;</code></td>
+<td><code>&#39;./lite&#39;</code></td>
+<td>value was not relative &amp; did not have <code>pkg.name</code> prefix</td>
+</tr>
+</tbody></table>
+
+<a href="#optionsrequire" id="optionsrequire" style="color: inherit; text-decoration: none;">
+  <h4>options.require</h4>
+</a>
+<p>Type: <code>boolean</code> <br>
+Default: <code>false</code></p>
+<p>When truthy, the <code>&quot;require&quot;</code> field is added to the list of allowed/known conditions.</p>
+<p>When falsey, the <code>&quot;import&quot;</code> field is added to the list of allowed/known conditions instead.</p>
+
+<a href="#optionsbrowser" id="optionsbrowser" style="color: inherit; text-decoration: none;">
+  <h4>options.browser</h4>
+</a>
+<p>Type: <code>boolean</code> <br>
+Default: <code>false</code></p>
+<p>When truthy, the <code>&quot;browser&quot;</code> field is added to the list of allowed/known conditions.</p>
+
+<a href="#optionsconditions" id="optionsconditions" style="color: inherit; text-decoration: none;">
+  <h4>options.conditions</h4>
+</a>
+<p>Type: <code>string[]</code> <br>
+Default: <code>[]</code></p>
+<p>Provide a list of additional/custom conditions that should be accepted when seen.</p>
+<blockquote>
+<p><strong>Important:</strong> The order specified within <code>options.conditions</code> does not matter. <br>The matching order/priority is <strong>always</strong> determined by the <code>&quot;exports&quot;</code> map&#39;s key order.</p>
+</blockquote>
+<p>For example, you may choose to accept a <code>&quot;production&quot;</code> condition in certain environments. Given the following <code>pkg</code> content:</p>
+<pre><code class="language-js"><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">contents</span><span class="hl-0"> = {</span><br/><span class="hl-0">  </span><span class="hl-6">// ...</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;exports&quot;</span><span class="hl-2">:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-3">&quot;worker&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./index.worker.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-3">&quot;require&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./index.require.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-3">&quot;production&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./index.prod.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-3">&quot;import&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;./index.import.mjs&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  }</span><br/><span class="hl-0">};</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;.&#39;</span><span class="hl-0">);</span><br/><span class="hl-6">//=&gt; &quot;./index.import.mjs&quot;</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;.&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&#39;production&#39;</span><span class="hl-0">]</span><br/><span class="hl-0">}); </span><span class="hl-6">//=&gt; &quot;./index.prod.js&quot;</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;.&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&#39;production&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">  </span><span class="hl-2">require:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">}); </span><span class="hl-6">//=&gt; &quot;./index.require.js&quot;</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;.&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&#39;production&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;worker&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">  </span><span class="hl-2">require:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">}); </span><span class="hl-6">//=&gt; &quot;./index.worker.js&quot;</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, </span><span class="hl-3">&#39;.&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&#39;production&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;worker&#39;</span><span class="hl-0">]</span><br/><span class="hl-0">}); </span><span class="hl-6">//=&gt; &quot;./index.worker.js&quot;</span>
+</code></pre>
+
+<a href="#optionsunsafe" id="optionsunsafe" style="color: inherit; text-decoration: none;">
+  <h4>options.unsafe</h4>
+</a>
+<p>Type: <code>boolean</code> <br>
+Default: <code>false</code></p>
+<blockquote>
+<p><strong>Important:</strong> You probably do not want this option! <br>It will break out of Node&#39;s default resolution conditions.</p>
+</blockquote>
+<p>When enabled, this option will ignore <strong>all other options</strong> except <a href="#optionsconditions"><code>options.conditions</code></a>. This is because, when enabled, <code>options.unsafe</code> <strong>does not</strong> assume or provide any default conditions except the <code>&quot;default&quot;</code> condition.</p>
+<pre><code class="language-js"><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">);</span><br/><span class="hl-6">//=&gt; Conditions: [&quot;default&quot;, &quot;import&quot;, &quot;node&quot;]</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, { </span><span class="hl-2">unsafe:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0"> });</span><br/><span class="hl-6">//=&gt; Conditions: [&quot;default&quot;]</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, { </span><span class="hl-2">unsafe:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">, </span><span class="hl-2">require:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">, </span><span class="hl-2">browser:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0"> });</span><br/><span class="hl-6">//=&gt; Conditions: [&quot;default&quot;]</span>
+</code></pre>
+<p>In other words, this means that trying to use <code>options.require</code> or <code>options.browser</code> alongside <code>options.unsafe</code> will have no effect. In order to enable these conditions, you must provide them manually into the <code>options.conditions</code> list:</p>
+<pre><code class="language-js"><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">unsafe:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&quot;require&quot;</span><span class="hl-0">]</span><br/><span class="hl-0">});</span><br/><span class="hl-6">//=&gt; Conditions: [&quot;default&quot;, &quot;require&quot;]</span><br/><br/><span class="hl-7">resolve</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">unsafe:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-2">conditions:</span><span class="hl-0"> [</span><span class="hl-3">&quot;browser&quot;</span><span class="hl-0">, </span><span class="hl-3">&quot;require&quot;</span><span class="hl-0">, </span><span class="hl-3">&quot;custom123&quot;</span><span class="hl-0">]</span><br/><span class="hl-0">});</span><br/><span class="hl-6">//=&gt; Conditions: [&quot;default&quot;, &quot;browser&quot;, &quot;require&quot;, &quot;custom123&quot;]</span>
+</code></pre>
+
+<a href="#legacypkg-options" id="legacypkg-options" style="color: inherit; text-decoration: none;">
+  <h3>legacy(pkg, options?)</h3>
+</a>
+<p>Returns: <code>string</code> or <code>undefined</code></p>
+<p>Also included is a &quot;legacy&quot; method for resolving non-<code>&quot;exports&quot;</code> package fields. This may be used as a fallback method when for when no <code>&quot;exports&quot;</code> mapping is defined. In other words, it&#39;s completely optional (and tree-shakeable).</p>
+<p>You may customize the field priority via <a href="#optionsfields"><code>options.fields</code></a>.</p>
+<p>When a field is found, its value is returned <em>as written</em>. <br>
+When no fields were found, <code>undefined</code> is returned. If you wish to mimic Node.js behavior, you can assume this means <code>&#39;index.js&#39;</code> – but this module does not make that assumption for you.</p>
+
+<a href="#optionsbrowser-1" id="optionsbrowser-1" style="color: inherit; text-decoration: none;">
+  <h4>options.browser</h4>
+</a>
+<p>Type: <code>boolean</code> or <code>string</code> <br>
+Default: <code>false</code></p>
+<p>When truthy, ensures that the <code>&#39;browser&#39;</code> field is part of the acceptable <code>fields</code> list.</p>
+<blockquote>
+<p><strong>Important:</strong> If your custom <a href="#optionsfields"><code>options.fields</code></a> value includes <code>&#39;browser&#39;</code>, then <em>your</em> order is respected. <br>Otherwise, when truthy, <code>options.browser</code> will move <code>&#39;browser&#39;</code> to the front of the list, making it the top priority.</p>
+</blockquote>
+<p>When <code>true</code> and <code>&quot;browser&quot;</code> is an object, then <code>legacy()</code> will return the the entire <code>&quot;browser&quot;</code> object.</p>
+<p>You may also pass a string value, which will be treated as an import/file path. When this is the case and <code>&quot;browser&quot;</code> is an object, then <code>legacy()</code> may return:</p>
+<ul>
+<li><code>false</code> – if the package author decided a file should be ignored; or</li>
+<li>your <code>options.browser</code> string value – but made relative, if not already</li>
+</ul>
+<blockquote>
+<p>See the [`&quot;browser&quot; field specification](<a href="https://github.com/defunctzombie/package-browser-field-spec">https://github.com/defunctzombie/package-browser-field-spec</a>) for more information.</p>
+</blockquote>
+
+<a href="#optionsfields" id="optionsfields" style="color: inherit; text-decoration: none;">
+  <h4>options.fields</h4>
+</a>
+<p>Type: <code>string[]</code> <br>
+Default: <code>[&#39;module&#39;, &#39;main&#39;]</code></p>
+<p>A list of fields to accept. The order of the array determines the priority/importance of each field, with the most important fields at the beginning of the list.</p>
+<p>By default, the <code>legacy()</code> method will accept any <code>&quot;module&quot;</code> and/or &quot;main&quot; fields if they are defined. However, if both fields are defined, then &quot;module&quot; will be returned.</p>
+<pre><code class="language-js"><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-5">contents</span><span class="hl-0"> = {</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;name&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;...&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;worker&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;worker.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;module&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;module.mjs&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;browser&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;browser.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">&quot;main&quot;</span><span class="hl-2">:</span><span class="hl-0"> </span><span class="hl-3">&quot;main.js&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">}</span><br/><br/><span class="hl-7">legacy</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">);</span><br/><span class="hl-6">// fields = [module, main]</span><br/><span class="hl-6">//=&gt; &quot;module.mjs&quot;</span><br/><br/><span class="hl-7">legacy</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, { </span><span class="hl-2">browser:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0"> });</span><br/><span class="hl-6">// fields = [browser, module, main]</span><br/><span class="hl-6">//=&gt; &quot;browser.mjs&quot;</span><br/><br/><span class="hl-7">legacy</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">fields:</span><span class="hl-0"> [</span><span class="hl-3">&#39;missing&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;worker&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;module&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;main&#39;</span><span class="hl-0">]</span><br/><span class="hl-0">});</span><br/><span class="hl-6">// fields = [missing, worker, module, main]</span><br/><span class="hl-6">//=&gt; &quot;worker.js&quot;</span><br/><br/><span class="hl-7">legacy</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">fields:</span><span class="hl-0"> [</span><span class="hl-3">&#39;missing&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;worker&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;module&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;main&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">  </span><span class="hl-2">browser:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">});</span><br/><span class="hl-6">// fields = [browser, missing, worker, module, main]</span><br/><span class="hl-6">//=&gt; &quot;browser.js&quot;</span><br/><br/><span class="hl-7">legacy</span><span class="hl-0">(</span><span class="hl-2">contents</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-2">fields:</span><span class="hl-0"> [</span><span class="hl-3">&#39;module&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;browser&#39;</span><span class="hl-0">, </span><span class="hl-3">&#39;main&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">  </span><span class="hl-2">browser:</span><span class="hl-0"> </span><span class="hl-4">true</span><span class="hl-0">,</span><br/><span class="hl-0">});</span><br/><span class="hl-6">// fields = [module, browser, main]</span><br/><span class="hl-6">//=&gt; &quot;module.mjs&quot;</span>
+</code></pre>
+
+<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+  <h2>License</h2>
+</a>
+<p>MIT © <a href="https://github.com/geometryzen">David Geo Holmes</a>
+MIT © <a href="https://lukeed.com">Luke Edwards</a></p>
+</div></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current selected"><a href="modules.html">package-<wbr/>exports-<wbr/>resolver-<wbr/>kernel</a>
+<ul></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="tsd-kind-interface"><a href="interfaces/MapLike.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg>Map<wbr/>Like</a></li>
+<li class="tsd-kind-interface"><a href="interfaces/Options.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Options</a></li>
+<li class="tsd-kind-interface"><a href="interfaces/Package.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Package</a></li>
+<li class="tsd-kind-interface"><a href="interfaces/Resolver.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Resolver</a></li>
+<li class="tsd-kind-function"><a href="functions/createResolver.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-64-path"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)" id="icon-64-text"></path></svg>create<wbr/>Resolver</a></li>
+<li class="tsd-kind-function"><a href="functions/legacy.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>legacy</a></li>
+<li class="tsd-kind-function"><a href="functions/resolve.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>resolve</a></li></ul></nav></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="assets/main.js"></script></body></html>
