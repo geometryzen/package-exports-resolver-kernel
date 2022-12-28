@@ -1,4 +1,4 @@
-import { legacy, Package, resolve } from '../index.js';
+import { legacy, Package, resolve } from '../../index.js';
 
 const pkg: Package = {
     "name": "foobar",

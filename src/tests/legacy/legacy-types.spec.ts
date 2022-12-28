@@ -1,4 +1,4 @@
-import { legacy, Package } from '../index.js';
+import { legacy, Package } from '../../index.js';
 
 describe('legacy-types', function () {
     it('types', function () {

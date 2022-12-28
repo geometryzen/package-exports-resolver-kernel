@@ -1,4 +1,4 @@
-import { isMapLike } from "./isMapLike";
+import { isMapLike } from "../../lib/isMapLike";
 
 describe('isMapLike', function () {
     it('{}', function () {

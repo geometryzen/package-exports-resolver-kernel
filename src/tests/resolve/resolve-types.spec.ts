@@ -1,4 +1,4 @@
-import { Package, resolve } from '../index.js';
+import { Package, resolve } from '../../index.js';
 
 describe('resolve-types', function () {
     it('svelte', function () {

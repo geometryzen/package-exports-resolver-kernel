@@ -1,6 +1,6 @@
 import { Package } from '../../index.js';
-import { createResolver } from '../createResolver.js';
-import { Options } from '../Options.js';
+import { createResolver } from '../../lib/createResolver.js';
+import { Options } from '../../lib/Options.js';
 
 const PROP_TYPES: Package = {
     "name": "prop-types",

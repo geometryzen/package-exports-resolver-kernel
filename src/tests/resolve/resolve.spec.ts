@@ -1,5 +1,5 @@
-import { Options, Package, resolve } from '../index.js';
-import { isMapLike } from './isMapLike.js';
+import { Options, Package, resolve } from '../../index.js';
+import { isMapLike } from '../../lib/isMapLike.js';
 
 function pass(pkgname: string, pkg: Package, expects: unknown, moduleName?: string, options?: Options): void {
     const out = resolve(pkgname, pkg, moduleName, options);

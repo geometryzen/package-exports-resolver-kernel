@@ -1,6 +1,4 @@
-import { Package } from '../../index.js';
-import { createResolver } from '../createResolver.js';
-import { Options } from '../Options.js';
+import { createResolver, Options, Package } from '../../index.js';
 
 const DAVINCI_EIGHT: Package = {
     "name": "davinci-eight",
