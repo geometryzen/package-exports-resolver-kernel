@@ -42,8 +42,11 @@ describe('resolve-types', function () {
                 }
             }
         };
-        const output = resolve('foobar', pkg, '.', { types: true });
-        expect(output).toBe('./ssr.mjs');
+        // const output = resolve('foobar', pkg, '.', { types: true });
+        // expect(output).toBe('./ssr.mjs');
+        expect(function () {
+            resolve('foobar', pkg, '.', { types: true });
+        }).toThrowError(new Error('No known conditions for "." entry in "foobar" package'));
     });
     it('solid-js', function () {
         const pkg: Package = {

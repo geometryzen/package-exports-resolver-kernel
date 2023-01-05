@@ -12,7 +12,17 @@ import { toName } from "./toName";
  */
 function loop(value: unknown, keys: Pick<Set<string>, 'has'>): string | undefined {
     if (typeof value === 'string') {
-        return value;
+        if (keys.has("types")) {
+            if (value.endsWith(".d.ts")) {
+                return value;
+            }
+            else {
+                return void 0;
+            }
+        }
+        else {
+            return value;
+        }
     }
 
     if (value) {
