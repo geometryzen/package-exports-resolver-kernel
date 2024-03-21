@@ -43,7 +43,7 @@ describe('createResolver', function () {
             const resolver = createResolver(pkgname, fileName, REACT_DOM, options);
             expect(function () {
                 resolver.resolve("react-dom");
-            }).toThrowError(new Error('No known conditions for "." entry in "react-dom" package'));
+            }).toThrow(new Error('No known conditions for "." entry in "react-dom" package'));
         });
     });
 });

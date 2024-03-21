@@ -47,7 +47,7 @@ describe('createResolver', function () {
             const resolver = createResolver(pkgname, fileName, REACT, options);
             expect(function () {
                 resolver.resolve("react");
-            }).toThrowError(new Error('No known conditions for "." entry in "react" package'));
+            }).toThrow(new Error('No known conditions for "." entry in "react" package'));
         });
         it('types', () => {
             const pkgname = "react";

@@ -47,12 +47,12 @@ describe('examples', function () {
         it('unresolved I', function () {
             expect(function () {
                 resolve('foobar', pkg, 'foobar/hello');
-            }).toThrowError('Missing "./hello" export in "foobar" package');
+            }).toThrow('Missing "./hello" export in "foobar" package');
         });
         it('unresolved II', function () {
             expect(function () {
                 resolve('foobar', pkg, './hello/world');
-            }).toThrowError('Missing "./hello/world" export in "foobar" package');
+            }).toThrow('Missing "./hello/world" export in "foobar" package');
         });
     });
 

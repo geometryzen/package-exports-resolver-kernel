@@ -46,7 +46,7 @@ describe('resolve-types', function () {
         // expect(output).toBe('./ssr.mjs');
         expect(function () {
             resolve('foobar', pkg, '.', { types: true });
-        }).toThrowError(new Error('No known conditions for "." entry in "foobar" package'));
+        }).toThrow(new Error('No known conditions for "." entry in "foobar" package'));
     });
     it('solid-js', function () {
         const pkg: Package = {
