@@ -13,7 +13,7 @@ function assertString(arg: unknown): string {
 }
 
 /**
- * @paran pkgname
+ * @param rootModuleName
  * @param pkg
  * @param options
  * @returns

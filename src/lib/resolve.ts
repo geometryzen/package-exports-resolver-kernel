@@ -48,6 +48,15 @@ function loop(value: unknown, keys: Pick<Set<string>, 'has'>): string | undefine
                     }
                 }
             }
+            // Similarly, when looking for the System format, we don't want "import" or "default".
+            // This will allow "types", "system", "import", "require", and "default" to coexist.
+            if (keys.has("system")) {
+                for (const idx in value) {
+                    if (idx === "system") {
+                        return loop(value[idx], keys);
+                    }
+                }
+            }
             for (const idx in value) {
                 if (keys.has(idx)) {
                     return loop(value[idx], keys);
@@ -99,7 +108,7 @@ function makeAllows(options: Options): Pick<Set<string>, 'has'> {
 }
 
 /**
- * @param rootModuleName The p
+ * @param rootModuleName The name or the root module
  * @param pkg package.json contents
  * @param moduleName entry name or import path
  * @param options
